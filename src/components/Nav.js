@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { fadeIn } from "../animations";
 
 // Logo
 import logo from "../img/logo.svg";
@@ -32,7 +33,7 @@ const Nav = () => {
   };
 
   return (
-    <StyledNav>
+    <StyledNav variants={fadeIn} initial="hidden" animate="show">
       <Logo onClick={clearSearch}>
         <img src={logo} alt="Logo" />
         <h1>Ignite</h1>

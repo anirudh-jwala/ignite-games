@@ -16,8 +16,9 @@ import { loadDetail } from "../actions/detailAction";
 
 // Util -> for images
 import { getSmallImage } from "../util";
+import releaseDate from "../img/clock.svg";
 
-const Game = ({ name, released, image, id }) => {
+const Game = ({ name, released, image, id, genres }) => {
   const stringPathId = id.toString();
 
   // Load detail
@@ -37,13 +38,20 @@ const Game = ({ name, released, image, id }) => {
       onClick={loadDetailHandler}
     >
       <Link to={`/game/${id}`}>
-        <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
-        <p>{released}</p>
         <motion.img
           layoutId={`image ${stringPathId}`}
           src={getSmallImage(image, 640)}
           alt={name}
         />
+        <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
+        <ReleaseDate>
+          <img src={releaseDate} alt="Release date" /> <p>{released}</p>
+        </ReleaseDate>
+        <Badge>
+          {genres.map((genre) => (
+            <p key={genre.id}>{genre.name}</p>
+          ))}
+        </Badge>
       </Link>
     </StyledGame>
   );
@@ -60,6 +68,27 @@ const StyledGame = styled(motion.div)`
     width: 100%;
     height: 40vh;
     object-fit: cover;
+  }
+`;
+
+const ReleaseDate = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: 0.2rem;
+  }
+`;
+
+const Badge = styled(motion.div)`
+  display: flex;
+  background: #ff7676;
+  text-align: center;
+  p {
+    color: white;
+    width: 100%;
   }
 `;
 

@@ -51,6 +51,7 @@ const Home = () => {
                   released={game.released}
                   id={game.id}
                   image={game.background_image}
+                  genres={game.genres}
                   key={game.id}
                 />
               ))}
@@ -67,6 +68,7 @@ const Home = () => {
               released={game.released}
               id={game.id}
               image={game.background_image}
+              genres={game.genres}
               key={game.id}
             />
           ))}
@@ -79,6 +81,7 @@ const Home = () => {
               released={game.released}
               id={game.id}
               image={game.background_image}
+              genres={game.genres}
               key={game.id}
             />
           ))}
@@ -91,10 +94,21 @@ const Home = () => {
               released={game.released}
               id={game.id}
               image={game.background_image}
+              genres={game.genres}
               key={game.id}
             />
           ))}
         </Games>
+        <p
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "3rem",
+            marginBottom: "1.5rem",
+          }}
+        >
+          Designed &amp; Developed by Anirudh Jwala
+        </p>
       </AnimateSharedLayout>
     </GameList>
   );

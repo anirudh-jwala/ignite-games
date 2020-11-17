@@ -5,9 +5,13 @@ import React from "react";
 // Pages
 import Home from "./pages/Home";
 
+// Styles
+import GlobalStyles from "./components/GlobalStyles";
+
 const App = () => {
   return (
-    <div>
+    <div className="App">
+      <GlobalStyles />
       <Home />
     </div>
   );

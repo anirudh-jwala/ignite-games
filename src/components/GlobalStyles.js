@@ -13,6 +13,9 @@ const GlobalStyles = createGlobalStyle`
         &::-webkit-scrollbar-thumb {
             background-color: darkgray;
         }
+        &::-webkit-scrollbar-track {
+            background-color: white;
+        }
     }
     body {
         font-family: 'Montserrat', sans-serif;
